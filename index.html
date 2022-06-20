@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beverage Bandits</title>
+    <style>
+        a {
+            cursor: pointer;
+        }
+        table { 
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        td {
+            text-align: center; 
+            vertical-align: middle;
+            border: 1px solid gray;
+            height: 35px;
+            width: 35px;
+        }
+        td.black {
+            border: 1px solid black;
+            background-color: black;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Beverage Bandits</h1>
+    <div id="start">
+        <p>Tabuleiro:</p>
+        <textarea style="height: 200px; width: 200px;" id="textarea-tabuleiro" name="tabuleiro">#######
+#E.G#.#
+#.#G..#
+#G.#.G#
+#G..#.#
+#...E.#
+#######</textarea>
+        <!-- <textarea style="height: 200px; width: 200px;" id="textarea-tabuleiro" name="tabuleiro"></textarea> -->
+        <br>
+        <button onclick="rodar()">Começar</button>
+    </div>
+    <div id="jogo" style="display: none;">
+        <div id="board"></div>
+        <div id="botoes">
+            <button onclick="rodada()">Próxima rodada</button>
+            <button onclick="rodar_ate_terminar()">Rodar até o final</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

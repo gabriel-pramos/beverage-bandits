@@ -1,1 +1,1 @@
-# beverage-bandits
+# Beverage Bandits
