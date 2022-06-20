@@ -21,7 +21,7 @@ const get_tabuleiro = (tabuleiro_string) => {
     }
 
     for (x in tabuleiro_array) {
-        if (!/^#.*#$/.test(tabuleiro_array[x])) {
+        if (!/^#.*#$/.test(tabuleiro_array[x]) || tabuleiro_array[x].length != tabuleiro_array[0].length) {
             return []
         }
     }
