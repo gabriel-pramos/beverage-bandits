@@ -94,6 +94,8 @@ const rodar = () => {
 
 const rodada = () => {
 
+    const mortos = new Map()
+
     if (num_elfs == 0 || num_goblins == 0) {
         document.getElementById("botoes").remove()
 
@@ -134,6 +136,9 @@ Outcome: `+rodadas+` * `+total_hp+` = `+rodadas*total_hp
     }
     
     for (j in ordem_jogadores) {
+        if (mortos.get(ordem_jogadores[j][0]+"_"+ordem_jogadores[j][1])) {
+            continue
+        }
         var tipo_jogador = tabuleiro[ordem_jogadores[j][0]][ordem_jogadores[j][1]]
 
         if (tipo_jogador == "G" && num_elfs == 0) {
@@ -233,7 +238,7 @@ Outcome: `+rodadas+` * `+total_hp+` = `+rodadas*total_hp
             if (((tabuleiro[vizinho[0]][vizinho[1]] == 'E' || tabuleiro[vizinho[0]][vizinho[1]] == 'G') && tabuleiro[vizinho[0]][vizinho[1]] != tipo_jogador)) {
                 hp.set(vizinho[0]+"_"+vizinho[1], hp.get(vizinho[0]+"_"+vizinho[1])-3)
                 if (hp.get(vizinho[0]+"_"+vizinho[1]) <= 0) {
-                    ordem_jogadores = ordem_jogadores.filter((v, i, a) => v != vizinho)
+                    mortos.set(vizinho[0].toString()+"_"+vizinho[1].toString(), true)
                     if (tabuleiro[vizinho[0]][vizinho[1]] == 'E') {
                         num_elfs--
                     } else if (tabuleiro[vizinho[0]][vizinho[1]] == 'G') {
