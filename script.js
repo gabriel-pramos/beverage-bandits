@@ -1,6 +1,9 @@
 var tabuleiro = []
 
-const movimentos = [ [-1, 0], [0, -1], [0, 1], [1, 0] ]
+// const movimentos = [ [-1, 0], [0, -1], [0, 1], [1, 0] ]
+const movimentos = [ [-1, 0], [0, 1], [0, -1], [1, 0] ]
+// const movimentos = [ [0, 1], [0, -1], [-1, 0], [1, 0] ]
+// const movimentos = [ [0, 1], [1, 0], [-1, 0], [0, -1], ]
 
 const hp = new Map();
 
